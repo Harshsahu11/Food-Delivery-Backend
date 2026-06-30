@@ -27,7 +27,7 @@ public class Order {
     private List<OrderItem> orderedItems;
     private Double amount;
     private String paymentStatus;
-    private String razorPayorderId;
+    private String razorpayOrderId;
     private String razorpaySignature;
     private String razorpayPaymentId;
     private String orderStatus;

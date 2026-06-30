@@ -54,7 +54,7 @@ public class OrderServiceImpl implements OrderService {
 
         com.razorpay.Order razorpayOrder = razorpayClient.orders.create(orderRequest);
 
-        order.setRazorPayorderId(razorpayOrder.get("id"));
+        order.setRazorpayOrderId(razorpayOrder.get("id"));
 
         String loggedInUserId = userService.findByUserId();
         order.setUserId(loggedInUserId);
@@ -119,7 +119,7 @@ public class OrderServiceImpl implements OrderService {
                 .amount(order.getAmount())
                 .userAddress(order.getUserAddress())
                 .userId(order.getUserId())
-                .razorpayOrderId(order.getRazorPayorderId())
+                .razorpayOrderId(order.getRazorpayOrderId())
                 .paymentStatus(order.getPaymentStatus())
                 .orderStatus(order.getOrderStatus())
                 .email(order.getEmail())

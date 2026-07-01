@@ -9,7 +9,7 @@ import com.FoodDelivery.FoodDeliveryBackend.service.OrderService;
 import com.FoodDelivery.FoodDeliveryBackend.service.UserService;
 import com.razorpay.RazorpayClient;
 import com.razorpay.RazorpayException;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -20,16 +20,13 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService {
 
-    @Autowired
     private final OrderRepository orderRepository;
 
-    @Autowired
     private final UserService userService;
 
-    @Autowired
     private final CartRepository cartRepository;
 
     @Value("${razorpay_key}")
